@@ -291,6 +291,7 @@ class GenerateCaption(luigi.Task):
         if caption != "":
             with self.output().open("w") as f:
                 f.write(caption + "\n")
+            print("HOOK_WROTE:"+self.output().path)
         else:
             logger.warn("got empty caption for " + absolute_path)
 
