@@ -280,7 +280,7 @@ class GenerateCaption(luigi.Task):
         img_path = self.input().path
         absolute_path = os.path.abspath(img_path)
         result = subprocess.run(
-            ["python", "caption.py", "--image-path", absolute_path],
+            ["python", "luigi-caption/caption.py", "--image-path", absolute_path],
             capture_output=True,
             text=True
         )
